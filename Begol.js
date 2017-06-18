@@ -1,4 +1,4 @@
-let arr = [1,2,3]
+let arr = ['A','B','C','D','E','F']
 
 
 let Sort = {
@@ -16,13 +16,12 @@ let Sort = {
 			// console.log(teamArray)
 		}
 		let fixedTeam = teamArray.slice(-1)[0]	//固定的队伍序号
-		let divide = teamCount % 2 ==0 ? teamCount / 2 : (teamCount + 1) / 2
+		let divide = teamCount / 2
 		let leftTeam = 	teamArray.slice(0, divide)
 		let rightTeam = teamArray.slice(divide)
 		let toLeft = []
 		let toRight = []
 		rightTeam.reverse()
-		// let newteamArray = []
 		console.log('第1轮：' + teamArray)
 		for(let i = 0; i < maxRound; i++){
 			if(i % 2 == 0){
@@ -36,12 +35,6 @@ let Sort = {
 				leftTeam.unshift(fixedTeam)
 				teamArray = leftTeam.concat(rightTeam.reverse())
 				rightTeam.reverse()
-				// console.log(rightTeam)
-				// fixedTeam = teamArray.splice(-1)
-				// console.log(fixedTeam)
-				// leftTeams = teamArray.splice(0, jumpNum)
-				// console.log(leftTeams)
-				// teamArray = fixedTeam.concat(teamArray, leftTeams)
 			}else{
 				leftTeam.shift()
 				// console.log('leftTeam right' + rightTeam)
@@ -54,21 +47,9 @@ let Sort = {
 				rightTeam.unshift(fixedTeam)
 				teamArray = leftTeam.concat(rightTeam.reverse())
 				rightTeam.reverse()
-				// fixedTeam = teamArray.splice(0,1)
-				// console.log('1')
-				// console.log('1 ' + fixedTeam)
-				// leftTeams = teamArray.splice(0, jumpNum)
-				// console.log('1 ' + leftTeams)
-				// teamArray = teamArray.concat(leftTeams, fixedTeam)
 			}
 			console.log('第' + (i+2)  + '轮：' + teamArray)
 		}
-		// fixedTeam = teamArray.splice(-1)
-		// console.log(fixedTeam)
-		// leftTeams = teamArray.splice(0, jumpNum)
-		// console.log(leftTeams)
-		// teamArray = fixedTeam.concat(teamArray, leftTeams)
-		// console.log(teamArray)
 	}
 }
 
